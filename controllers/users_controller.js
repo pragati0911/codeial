@@ -8,13 +8,18 @@ module.exports.profile = function(req,res){
 
 
 module.exports.signUp = function(req,res){
-
+   if(req.isAuthenticated()){
+    return  res.redirect('users/profile');
+   }
    return res.render('Sign_up', {
       title: "codeial | Sign up"
    })
 }
 
 module.exports.signIn = function(req,res){
+   if(req.isAuthenticated()){
+     return res.redirect('/users/profile');
+   }
 
    return res.render('Sign_in', {
       title: "codeial | Sign in"

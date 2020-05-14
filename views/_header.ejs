@@ -1,3 +1,25 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <header>
-    Page Header
+    <%  if (locals.user) {%>
+   
+    <nav class="nav nav-pills nav-fill">
+        <a class="nav-item nav-link active" href="/">Codeial </a>
+        <a class="nav-item nav-link" href="/users/profile"><%= user.name %></a>
+        <a class="nav-item nav-link" href="/users/sign-out">Sign Out</a>
+        
+      </nav>
+    
+
+     <% }   else { %>
+        
+        <nav class="nav nav-pills nav-fill">
+            <a class="nav-item nav-link active" href="/">Codeial </a>
+            <a class="nav-item nav-link" href="/users/sign-up">Sign Up</a>
+            <a class="nav-item nav-link" href="/users/sign-in">Sign In</a>
+            
+          </nav>
+        
+        
+        
+        <%} %>
 </header>
